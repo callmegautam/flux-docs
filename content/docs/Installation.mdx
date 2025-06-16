@@ -1,19 +1,204 @@
 ---
-title: Components
-description: Components
+title: Installation
+description: Learn how to install Flux on your system and get started with package management.
 ---
 
-## Code Block
+import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
+import { File, Folder, Files } from "fumadocs-ui/components/files";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-```js
-console.log("Hello World");
+---
+
+## System Requirements
+
+Before installing Flux, make sure your system meets the following requirements:
+
+-   Node.js 16.0.0 or later
+-   macOS, Windows (including WSL), or Linux
+-   At least 100MB of disk space for the Flux installation
+
+---
+
+## Installation Methods
+
+There are several ways to install Flux, depending on your preferences and requirements. Choose the method that best suits your needs:
+
+### macOS/Linux
+
+<Steps>
+    <Step>
+
+    #### Install Flux using Homebrew (macOS/Linux)
+
+    If you have Homebrew installed, you can easily install Flux by running the following command in your terminal:
+
+    ```bash title="Terminal"
+    brew install flux
+    ```
+
+    </Step>
+
+    <Step>
+
+    #### Install Flux using cURL (macOS/Linux) / Windows (WSL)
+
+    Alternatively, you can use cURL to download and install Flux:
+
+    ```bash title="Terminal"
+    curl -fsSL https://flux.sh/install | sh
+    ```
+
+    </Step>
+    <Step>
+    #### Verify Installation
+    After installation, verify that Flux is installed correctly by running the following command:
+
+    ```bash title="Terminal"
+    flux version
+    ```
+    If the installation was successful, you should see the version of Flux displayed in the terminal.
+    If you encounter any issues, refer to the [Flux documentation](https://flux.io/docs/) for troubleshooting tips.
+    </Step>
+
+</Steps>
+
+### Windows (Native)
+
+<Steps>
+    <Step>
+    
+    #### Download Flux for Windows
+    
+    Download Flux executable from the [Flux Releases](https://github.com/callmegautam/flux/releases) page. 
+    
+    
+    </Step>
+
+    <Step>
+
+    #### Install Flux on Windows
+    Open the downloaded file and follow the installation instructions.
+
+    </Step>
+
+    <Step>
+
+    #### Add Flux to PATH
+    Ensure that the directory where Flux is installed is added to your system's PATH environment variable. This allows you to run Flux commands from any command prompt or PowerShell window.
+
+
+    </Step>
+
+    <Step>
+
+    #### Verify Installation
+
+    Open a command prompt or PowerShell window and run the following command to verify that Flux is installed correctly:
+
+    ```bash title="Terminal"
+    flux version
+    ```
+    If the installation was successful, you should see the version of Flux displayed in the terminal.
+    If you encounter any issues, refer to the [Flux documentation](https://flux.io/docs/) for troubleshooting tips.
+
+
+    </Step>
+
+</Steps>
+
+### Manual
+
+<Steps>
+    <Step>
+
+    #### Download Flux Binary
+
+    Download the latest Flux binary from the [Flux Releases](https://github.com/callmegautam/flux/releases) page.
+
+    </Step>
+    <Step>
+
+        #### Add Flux to PATH
+
+        Extract the downloaded file to a directory of your choice. Add the directory to your system's PATH environment variable to make it accessible from the command line.
+
+        </Step>
+        <Step>
+
+            #### Verify Installation
+
+            Open a command prompt or PowerShell window and run the following command to verify that Flux is installed correctly:
+
+            ```bash title="Terminal"
+            flux version
+            ```
+            If the installation was successful, you should see the version of Flux displayed in the terminal.
+            If you encounter any issues, refer to the [Flux documentation](https://flux.io/docs/) for troubleshooting tips.
+
+            </Step>
+
+</Steps>
+
+---
+
+## Updating Flux
+
+To update Flux to the latest version, you can use the self-update command:
+
+```bash title="Terminal"
+flux self-update
 ```
 
-## Cards
+This command will download the latest version of Flux and replace the existing binary with the updated version.
 
-<Cards>
-    <Card title="Learn more about Next.js" href="https://nextjs.org/docs">
-        Next.js is a React framework that enables you to build static and dynamic websites and applications.
-    </Card>
-    <Card title="Learn more about Fumadocs" href="https://fumadocs.vercel.app" />
-</Cards>
+---
+
+## Uninstalling Flux
+
+To uninstall Flux, you can use the following command:
+
+### macOS/Linux
+
+<Steps>
+    <Step>
+
+    #### Uninstall Flux using Homebrew (macOS/Linux)
+
+    If you installed Flux using Homebrew, you can uninstall it by running the following command in your terminal:
+
+    ```bash title="Terminal"
+    brew uninstall flux
+    ```
+
+    </Step>
+
+    <Step>
+
+    #### Uninstall Flux using cURL (macOS/Linux) / Windows (WSL)
+
+    If you installed Flux using cURL, you can uninstall it by running the following command:
+
+    ```bash title="Terminal"
+    curl -fsSL https://flux.sh/uninstall | sh
+    ```
+
+    </Step>
+
+</Steps>
+
+### Windows (WSL) / (Native)
+
+```bash title="Terminal"
+curl -fsSL https://flux.sh/uninstall | sh
+```
+
+### Manual
+
+To manually uninstall Flux, simply delete the Flux binary from the directory where you installed it. If you added Flux to your system's PATH, you may also want to remove that entry from your PATH environment variable.
+
+---
+
+## Troubleshooting
+
+If you encounter any issues during installation or usage, refer to the [Flux documentation](https://flux.io/docs/) for troubleshooting tips. You can also check the [Flux GitHub repository](https://github.com/callmegautam/flux/issues) for known issues and their solutions.

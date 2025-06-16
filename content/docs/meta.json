@@ -1,4 +1,12 @@
 {
-    "pages": ["---Getting Started---", "index", "Installation", "Configuration", "Usage", "Troubleshooting"],
+    "pages": [
+        "---Getting Started---",
+        "index",
+        "installation",
+        "Configuration",
+        "Usage",
+        "Troubleshooting",
+        "Components"
+    ],
     "defaultOpen": true
 }

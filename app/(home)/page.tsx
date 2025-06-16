@@ -1,8 +1,8 @@
-// import { redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 
 export default function HomePage() {
-    // return redirect("/docs");
+    return redirect("/docs");
     return (
         <main>
             <div className="flex flex-col items-center justify-center min-h-screen">
