@@ -20,17 +20,4 @@ export const baseOptions: BaseLayoutProps = {
         // transparentMode: "always",
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [
-        {
-            type: "menu",
-            text: "Guide",
-            items: [
-                {
-                    text: "Getting Started",
-                    description: "Learn to use Fumadocs",
-                    url: "/docs",
-                },
-            ],
-        },
-    ],
 };

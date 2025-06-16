@@ -1,0 +1,4 @@
+{
+    "pages": ["---Getting Started---", "index", "Installation", "Configuration", "Usage", "Troubleshooting"],
+    "defaultOpen": true
+}
