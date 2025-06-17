@@ -1,0 +1,85 @@
+---
+title: flux reinstall
+description: Reinstall all project dependencies from scratch using Flux.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+---
+
+## Overview
+
+The `flux reinstall` command removes your existing `node_modules` and lockfile, then performs a clean installation of all dependencies.
+
+It’s especially useful when:
+
+-   Your dependency tree is broken or corrupted
+-   You want to ensure a fresh, deterministic install
+-   You just cloned a project and want a clean setup
+
+---
+
+## Usage
+
+```bash title="Terminal"
+flux reinstall
+```
+
+---
+
+## What It Does
+
+<Steps>
+  <Step>
+  #### Deletes Existing Modules  
+  Removes the `node_modules` folder from your project directory.
+  </Step>
+
+<Step>
+    #### Resets the Lockfile <br />
+    Deletes your `flux.lock` (or `lock.json`) file.
+</Step>
+
+  <Step>
+  #### Reinstalls Dependencies  
+  Rebuilds the dependency graph from `package.json` and installs all packages from scratch.
+  </Step>
+</Steps>
+
+---
+
+## When to Use
+
+-   After switching branches where dependencies changed
+-   When facing strange errors like mismatched versions or missing binaries
+-   To clean up corrupted installs or leftover modules
+-   Before committing/pushing to make sure your lockfile is clean
+
+---
+
+## Example
+
+```bash title="Terminal"
+flux reinstall
+```
+
+This will fully reset the project’s dependency tree and regenerate a fresh `flux.lock` file.
+
+---
+
+## Benefits
+
+-   Ensures consistency between local and CI environments
+-   Helps avoid hard-to-detect bugs caused by stale `node_modules`
+-   Safer and faster than manually deleting folders or using `rm -rf`
+
+---
+
+## Related Commands
+
+-   [`flux install`](/docs/cli/install) – Install dependencies normally
+-   [`flux list`](/docs/cli/list) – View installed packages
+-   [`flux update`](/docs/cli/update) – Upgrade dependencies
+-   [`flux init`](/docs/cli/init) – Setup a new project with default dependencies
+
+---

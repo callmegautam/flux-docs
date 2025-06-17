@@ -1,0 +1,118 @@
+---
+title: flux search
+description: Search for packages directly from the Flux CLI using smart and fast queries.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Overview
+
+The `flux search` command allows you to quickly search for packages from the registry (npm-compatible) directly in your terminal using the Flux CLI.
+
+It uses a blazing fast query engine, optimized for developer experience.
+
+---
+
+## Usage
+
+```bash title="Terminal"
+flux search <package-name>
+```
+
+---
+
+## Example
+
+```bash title="Terminal"
+flux search tailwind
+```
+
+### Output:
+
+```text title="Terminal"
+Found 3 results for "tailwind":
+
+- tailwindcss       3.4.1     Utility-first CSS framework
+- tailwind-merge    1.14.0    Merge Tailwind classes without conflicts
+- @tailwind/forms   0.5.4     Official Tailwind plugin for forms
+```
+
+---
+
+## Features
+
+-   Fast autocomplete-style searching
+-   Returns relevant results with descriptions and version numbers
+-   Defaults to top results from npm registry
+-   Matches full and partial package names
+-   Great for discovering new packages without leaving the terminal
+
+---
+
+## Use Cases
+
+<Steps>
+  <Step>
+  #### Discover New Libraries  
+  Looking for alternatives or helper libraries? Try searching with keywords like `auth`, `date`, `router`, or `tailwind`.
+  </Step>
+
+{" "}
+
+<Step>
+    #### Confirm Exact Package Name <br />
+    Use before installing to ensure you’re spelling the name correctly.
+</Step>
+
+  <Step>
+  #### Preview Versions and Descriptions  
+  Quickly see the latest version and what the package does before installing.
+  </Step>
+</Steps>
+
+---
+
+## Tabs: Usage Patterns
+
+<Tabs items={["Basic Search", "Search with Keyword", "Before Installing"]}> <Tab>
+
+```bash title="Terminal"
+flux search react
+```
+
+Finds packages like `react`, `react-dom`, `react-router`, etc.
+
+</Tab>
+<Tab>
+
+```bash title="Terminal"
+flux search date
+```
+
+Useful for exploring date libraries like `date-fns`, `dayjs`, and more.
+
+</Tab>
+<Tab>
+
+```bash title="Terminal"
+flux search axios
+flux install axios
+```
+
+Use search to verify the package before installing it.
+
+</Tab>
+</Tabs>
+
+---
+
+## Related Commands
+
+-   [`flux install`](/docs/cli/install) – Install a package after searching
+-   [`flux list`](/docs/cli/list) – See what’s already installed
+-   [`flux outdated`](/docs/cli/outdated) – Check if an installed package has updates
+
+---

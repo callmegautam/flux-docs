@@ -1,4 +1,4 @@
 {
-    "pages": ["init", "install", "uninstall", "update", "run", "list", "outdated"],
+    "pages": ["init", "install", "uninstall", "update", "run", "list", "outdated", "reinstall", "search"],
     "defaultOpen": true
 }
