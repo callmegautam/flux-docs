@@ -1,0 +1,98 @@
+---
+title: flux install
+description: Install one or more dependencies in your project using Flux.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Overview
+
+The `flux install` command adds new dependencies to your project. It’s optimized for speed and works with zero external cache, using Flux's custom dependency graph resolver.
+
+---
+
+## Usage
+
+```bash title="Terminal"
+flux install [package-name...]
+```
+
+---
+
+## Examples
+
+<Tabs items={["Install Specific Packages", "Install All Packages"]}>
+
+<Tab>
+
+#### Install Specific Packages
+
+```bash title="Terminal"
+flux install react react-dom
+```
+
+This installs `react` and `react-dom` and adds them to your `dependencies` in `package.json`.
+
+</Tab>
+
+<Tab>
+
+#### Install All Dependencies
+
+```bash title="Terminal"
+flux install
+```
+
+Installs all dependencies listed in your `package.json` file.
+
+</Tab>
+</Tabs>
+
+---
+
+## Options
+
+| Option             | Description                         |
+| ------------------ | ----------------------------------- |
+| `--dev`            | Install as a devDependency          |
+| `--exact`          | Save exact versions (no ^ or \~)    |
+| `--no-save`        | Don’t update `package.json`         |
+| `--prefer-offline` | Use local cache only (if available) |
+
+---
+
+## How It Works
+
+<Steps>
+    <Step>
+        #### Resolves dependencies <br />
+        Flux calculates the optimal graph and fetches only the required versions of each package.
+    </Step>
+    <Step>
+        #### Downloads and links packages <br />
+        Files are placed directly in your `node_modules` with no symlink chaos.
+    </Step>
+    <Step>
+        #### Updates `package.json` and `flux.lock` <br />
+        Ensures consistent, repeatable installs across environments.
+    </Step>
+</Steps>
+
+---
+
+## Performance Tip
+
+Flux skips unnecessary steps like global cache lookups, which makes it **faster** than npm, yarn, and pnpm in most cases — especially on CI or fresh installs.
+
+---
+
+## Related Commands
+
+-   [`flux uninstall`](/docs/cli/uninstall) – Remove dependencies
+-   [`flux update`](/docs/cli/update) – Update packages to newer versions
+-   [`flux reinstall`](/docs/cli/reinstall) – Clean install with full reset
+
+---

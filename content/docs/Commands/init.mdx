@@ -1,0 +1,86 @@
+---
+title: flux init
+description: Initialize a new Flux project with a basic configuration and structure.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { File, Folder, Files } from "fumadocs-ui/components/files";
+
+---
+
+## Overview
+
+The `flux init` command initializes a new project with a predefined structure, configuration file, and optionally a default package.json.
+
+It’s the fastest way to get started with Flux in any JavaScript/TypeScript project.
+
+---
+
+## Usage
+
+```bash title="Terminal"
+flux init <project-name>
+```
+
+---
+
+## Arguments
+
+-   `<project-name>` (optional): Name of the project directory to create. If not provided, the current directory is used.
+
+---
+
+## Example
+
+```bash title="Terminal"
+flux init my-app
+```
+
+This will create a new directory `my-app` with the following structure:
+
+<Files>
+    <Folder name="my-project" defaultOpen>
+        <Folder name="node_modules" />
+        <Folder name="src" defaultOpen>
+            <File name="index.js" />
+            <File name="app.js" />
+        </Folder>
+        <File name="flux.config.js" />
+        <File name="package.json" />
+        <File name="README.md" />
+    </Folder>
+</Files>
+
+---
+
+## What it Does
+
+<Steps>
+  <Step>
+  #### Creates a Project Directory  
+  If a `<project-name>` is specified, a new folder is created with that name.
+  </Step>
+  <Step>
+  #### Generates Default Files  
+  Generates `flux.config.js` and a starter `package.json` with basic config.
+  </Step>
+  <Step>
+  #### Adds Starter Code  
+  A simple `src/index.js` file is included to help you start quickly.
+  </Step>
+</Steps>
+
+---
+
+## Related Commands
+
+-   [`flux install`](/docs/cli/install) – Install packages after initializing
+-   [`flux run`](/docs/cli/run) – Run your project scripts
+
+---
+
+## Tip
+
+You can run `flux init` in an existing project directory to just generate `flux.config.js` without overwriting existing files.
+
+---

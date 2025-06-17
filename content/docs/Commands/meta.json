@@ -1,0 +1,4 @@
+{
+    "pages": ["init", "install", "uninstall", "update", "version", "help"],
+    "defaultOpen": true
+}

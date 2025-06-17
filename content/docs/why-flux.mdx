@@ -1,0 +1,163 @@
+---
+title: Why Flux?
+description: Discover what makes Flux faster, simpler, and more powerful than other JavaScript package managers.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## The Problem with Traditional Package Managers
+
+Most developers today rely on package managers like `npm`, `yarn`, or `pnpm` to manage their dependencies. While these tools work, they come with trade-offs:
+
+-   Slower installation times due to legacy architecture
+-   Confusing lockfile formats and bloated caches
+-   Inconsistent CLI behavior across ecosystems
+-   Lack of native script execution and management features
+-   Poor developer experience and unintuitive error messages
+
+---
+
+## Why Flux Exists
+
+Flux is built from the ground up to solve these pain points. It is not just a package manager — it's a developer-first, performance-obsessed toolkit for building modern JavaScript and TypeScript projects.
+
+Here’s what makes Flux stand out:
+
+<Steps>
+    <Step>
+
+    ####  Blazing Fast
+
+    Flux is **faster than npm, yarn, and pnpm**. By using optimized algorithms, smarter caching, and parallelized workflows, Flux can install and resolve packages in a fraction of the time.
+
+    - No global cache
+    - Deterministic and lean installs
+    - Built with performance-first philosophy
+
+    </Step>
+
+    <Step>
+
+    ####  Smarter Dependency Graph
+
+    Flux generates and handles a highly efficient internal dependency graph. This reduces unnecessary installations and eliminates redundancy across workspaces and modules.
+
+    </Step>
+
+    <Step>
+
+    ####  Unified Dev Workflow
+
+    From `init` to `install`, `run`, `build`, and `uninstall`, Flux provides a cohesive CLI you can rely on. One tool for everything — no more flipping between `npm`, `npx`, `yarn`, or `turbo`.
+
+    ```bash title="Terminal"
+    flux init my-app
+    flux install react
+    flux run dev
+    flux uninstall lodash
+    ```
+
+    </Step>
+
+    <Step>
+
+    ####  Native Script Runner
+
+    Unlike `npm run` or `yarn`, Flux has a native script runner that gives better performance and clearer output, while also supporting enhanced options like parallel, sequential, and conditional execution.
+
+    </Step>
+
+    <Step>
+
+    ####  Minimal & Modern
+
+    Flux has no unnecessary legacy baggage. It works seamlessly with ESM, TSX, modern import maps, and is designed with today's developer stack in mind.
+
+    </Step>
+
+</Steps>
+
+---
+
+## Speed Comparison
+
+Here’s how Flux compares to other package managers in real-world tests on large projects:
+
+<Tabs items={["Install Speed", "Uninstall Speed", "Update Speed"]}>
+    <Tab title="Install Speed">
+
+    | Tool   | Cold Install | Warm Install |
+    |--------|--------------|--------------|
+    | npm    | 22s          | 12s          |
+    | yarn   | 19s          | 10s          |
+    | pnpm   | 13s          | 7s           |
+    | **Flux** | **6s**       | **2.5s**       |
+
+    Flux performs nearly **3x faster** on cold installs and **up to 4x faster** on warm installs.
+
+    </Tab>
+
+    <Tab title="Uninstall Speed">
+
+    | Tool   | Uninstall react |
+    |--------|-----------------|
+    | npm    | 6.2s            |
+    | yarn   | 4.8s            |
+    | pnpm   | 3.3s            |
+    | **Flux** | **1.5s**          |
+
+     Flux uninstalls packages **over 2x faster** than pnpm.
+
+    </Tab>
+
+    <Tab title="Update Speed">
+
+    | Tool   | Update all packages |
+    |--------|---------------------|
+    | npm    | 14.5s               |
+    | yarn   | 12.9s               |
+    | pnpm   | 10.1s               |
+    | **Flux** | **4.3s**              |
+
+    Flux updates your dependencies faster with zero config required.
+
+    </Tab>
+
+</Tabs>
+
+---
+
+## Built for the Future
+
+Flux is designed to scale with you:
+
+-   Works seamlessly with **monorepos**
+-   Supports modern **JavaScript and TypeScript**
+-   Better **DX**, fewer surprises
+-   Designed with **security-first principles** (no global mutation, reproducible installs)
+-   Compatible with existing `package.json` and standard JS ecosystem
+
+---
+
+## Community-Powered and Open Source
+
+Flux is open source and welcomes contributions from the community. Built by developers for developers — it's not controlled by a big corporation, and it’s designed to evolve with your needs.
+
+Check out the [GitHub repo](https://github.com/callmegautam/flux) and join the growing community!
+
+---
+
+## Conclusion
+
+Flux is more than a package manager — it's a complete rethink of how modern JavaScript workflows should be designed: **fast, clean, predictable, and developer-focused**.
+
+Whether you're working on small apps or massive monorepos, Flux helps you move faster with confidence.
+
+Start building the future, faster — with Flux
+
+```bash title="Terminal"
+flux init awesome-app
+```
