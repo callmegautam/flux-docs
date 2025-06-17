@@ -1,0 +1,96 @@
+---
+title: flux uninstall
+description: Remove one or more dependencies from your project using Flux.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Overview
+
+The `flux uninstall` command removes specified dependencies from your project and updates your `package.json` and `flux.lock` files accordingly.
+
+You can also use it without arguments to remove all installed packages.
+
+---
+
+## Usage
+
+```bash title="Terminal"
+flux uninstall [package-name...]
+```
+
+---
+
+## Examples
+
+<Tabs items={["Uninstall Specific Packages", "Uninstall All Packages"]}>
+<Tab>
+
+#### Uninstall Specific Packages
+
+```bash title="Terminal"
+flux uninstall lodash
+```
+
+Removes `lodash` from your `node_modules` and updates your `package.json`.
+
+</Tab>
+
+<Tab>
+
+#### Uninstall All Packages
+
+```bash title="Terminal"
+flux uninstall
+```
+
+Completely removes all packages listed in `package.json` and clears the `node_modules` folder.
+
+</Tab>
+</Tabs>
+
+---
+
+## How It Works
+
+<Steps>
+    <Step>
+        #### Removes from `node_modules` <br />
+        The specified package(s) are deleted from your local installation.
+    </Step>
+    <Step>
+        #### Updates `package.json` <br />
+        The packages are removed from the relevant section (dependencies/devDependencies).
+    </Step>
+    <Step>
+        #### Updates `flux.lock` <br />
+        Flux ensures the lockfile reflects the changes for a consistent future install.
+    </Step>
+</Steps>
+
+---
+
+## Options
+
+| Option      | Description                             |
+| ----------- | --------------------------------------- |
+| `--dev`     | Remove from `devDependencies` only      |
+| `--no-save` | Do not modify `package.json`            |
+| `--purge`   | Remove entire `node_modules` + lockfile |
+
+---
+
+## Related Commands
+
+-   [`flux install`](/docs/cli/install) – Add dependencies
+-   [`flux update`](/docs/cli/update) – Upgrade existing dependencies
+-   [`flux reinstall`](/docs/cli/reinstall) – Perform a clean reinstall
+
+---
+
+```
+
+```

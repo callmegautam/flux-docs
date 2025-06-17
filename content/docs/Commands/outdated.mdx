@@ -1,0 +1,109 @@
+---
+title: flux outdated
+description: Check which of your installed dependencies have newer versions available using Flux.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Overview
+
+The `flux outdated` command shows which of your dependencies are outdated — comparing the versions currently installed with the latest available in the registry.
+
+This allows you to stay on top of updates, including **patches**, **minor**, and **major** changes.
+
+---
+
+## Usage
+
+```bash title="Terminal"
+flux outdated
+```
+
+---
+
+## Example Output
+
+```text title="Terminal"
+Package     Current   Latest   Type
+--------    -------   ------   ------
+react       18.2.0    18.3.0   dependency
+eslint      8.50.0    8.55.0   devDependency
+axios       1.4.0     1.6.0    dependency
+```
+
+---
+
+## Features
+
+-   Lists all outdated packages in a clear, tabular format
+-   Separates dependencies and devDependencies
+-   Indicates the type of version bump (patch, minor, major) _(coming soon)_
+-   Designed to be much faster than `npm outdated`, `yarn outdated`, or `pnpm outdated`
+
+---
+
+## Use Cases
+
+<Steps>
+  <Step>
+  #### Regular Maintenance  
+  Run this periodically to keep your project up-to-date and secure.
+  </Step>
+
+<Step>
+    #### Before Updating <br />
+    Use `flux outdated` to see what would be updated if you ran `flux update`.
+</Step>
+
+  <Step>
+  #### Audit Your Stack  
+  Helps identify packages that haven't been updated in a long time.
+  </Step>
+</Steps>
+
+---
+
+## Tabs: Related Commands
+
+<Tabs items={["View Outdated", "Update After Audit", "Check Specific Package"]}> <Tab>
+
+```bash title="Terminal"
+flux outdated
+```
+
+List everything that's outdated in the project.
+
+</Tab>
+<Tab>
+
+```bash title="Terminal"
+flux outdated
+flux update
+```
+
+Use `flux outdated` first to review, then `flux update` to apply.
+
+</Tab>
+<Tab>
+
+```bash title="Terminal"
+flux outdated | grep tailwind
+```
+
+Check if a specific package (like `tailwindcss`) is behind.
+
+</Tab>
+</Tabs>
+
+---
+
+## Related Commands
+
+-   [`flux update`](/docs/cli/update) – To apply updates after reviewing
+-   [`flux list`](/docs/cli/list) – To see currently installed packages
+-   [`flux reinstall`](/docs/cli/reinstall) – To reset and update everything cleanly
+
+---

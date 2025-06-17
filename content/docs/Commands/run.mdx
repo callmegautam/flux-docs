@@ -1,0 +1,114 @@
+---
+title: flux run
+description: Execute scripts defined in your package.json using Flux.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Overview
+
+The `flux run` command lets you run scripts defined in your project's `package.json` file. It’s a fast, zero-overhead alternative to `npm run`, `yarn run`, and `pnpm run`.
+
+---
+
+## Usage
+
+```bash title="Terminal"
+flux run <script-name>
+```
+
+---
+
+## Example
+
+```bash title="Terminal"
+flux run dev
+```
+
+This will run the `dev` script from your `package.json`, like:
+
+```json title="package.json"
+{
+    "scripts": {
+        "dev": "next dev"
+    }
+}
+```
+
+---
+
+## Features
+
+-   **Faster** than `npm run`, `yarn`, or `pnpm` because it doesn’t spawn unnecessary subprocesses.
+-   **Sane defaults** for environment variables and PATH resolution.
+-   Works seamlessly with monorepos and workspaces.
+
+---
+
+## How It Works
+
+<Steps>
+  <Step>
+  #### Finds the Script  
+  Flux searches your `package.json` for the given script name.
+  </Step>
+
+{" "}
+
+<Step>
+    #### Sets up Environment <br />
+    It sets up an isolated and clean environment with the correct `PATH` and `NODE_ENV`.
+</Step>
+
+  <Step>
+  #### Executes the Script  
+  The script is run directly, with full access to dependencies and binary tools.
+  </Step>
+</Steps>
+
+---
+
+## Tabs: Run vs Dev vs Build
+
+<Tabs items={["Run Script", "Dev Script", "Build Script"]}> 
+<Tab>
+
+```bash title="Terminal"
+flux run lint
+```
+
+Runs a custom `lint` script like ESLint.
+
+</Tab>
+<Tab>
+
+```bash title="Terminal"
+flux run dev
+```
+
+Runs a development server such as Vite or Next.js.
+
+</Tab>
+<Tab>
+
+```bash title="Terminal"
+flux run build
+```
+
+Compiles your app for production.
+
+</Tab>
+</Tabs>
+
+---
+
+## Related Commands
+
+-   [`flux install`](/docs/cli/install) – To install packages used in your scripts
+-   [`flux init`](/docs/cli/init) – Sets up the project with default scripts
+-   [`flux reinstall`](/docs/cli/reinstall) – Reset and re-install scripts with packages
+
+---

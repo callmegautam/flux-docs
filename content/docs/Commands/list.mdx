@@ -1,0 +1,112 @@
+---
+title: flux list
+description: View all installed dependencies in your project using Flux.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Overview
+
+The `flux list` command displays all currently installed dependencies in your project. This includes both direct and development dependencies, pulled from `package.json` and resolved via the lockfile.
+
+---
+
+## Usage
+
+```bash title="Terminal"
+flux list
+```
+
+---
+
+## Example Output
+
+```text title="Terminal"
+dependencies:
+  react: 18.3.0
+  react-dom: 18.3.0
+  axios: 1.6.0
+
+devDependencies:
+  typescript: 5.3.3
+  eslint: 8.55.0
+```
+
+---
+
+## Features
+
+-   Shows both `dependencies` and `devDependencies`
+-   Reads from `flux.lock` for accurate, resolved versions
+-   Faster and cleaner than `npm list`, `yarn list`, or `pnpm list`
+-   Helps confirm what’s actually installed vs. declared
+
+---
+
+## Use Cases
+
+<Steps>
+  <Step>
+  #### Verify Installed Packages  
+  Use this to quickly audit which versions are installed.
+  </Step>
+
+{" "}
+
+<Step>
+    #### Confirm Install Success <br />
+    After installing a new package, run `flux list` to confirm it's correctly added added.
+</Step>
+
+  <Step>
+  #### Troubleshoot Version Issues  
+  Helps debug mismatches between what's in `package.json` and what’s actually present.
+  </Step>
+</Steps>
+
+---
+
+## Tabs: List Use Cases
+
+<Tabs items={["Simple Audit", "After Install", "For Debugging"]}> <Tab>
+
+```bash title="Terminal"
+flux list
+```
+
+Just want to see all installed packages? Run it anytime.
+
+</Tab>
+<Tab>
+
+```bash title="Terminal"
+flux install express
+flux list
+```
+
+Use after installing to confirm the addition.
+
+</Tab>
+<Tab>
+
+```bash title="Terminal"
+flux list
+```
+
+Use if you're unsure why a package isn't being picked up correctly in dev tools.
+
+</Tab>
+</Tabs>
+
+---
+
+## Related Commands
+
+-   [`flux install`](/docs/cli/install) – To install new packages
+-   [`flux update`](/docs/cli/update) – To update current packages
+-   [`flux outdated`](/docs/cli/outdated) – To list packages that have updates available
+
+---

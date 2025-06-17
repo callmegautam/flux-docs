@@ -1,0 +1,101 @@
+---
+title: flux update
+description: Update one or more dependencies to their latest compatible or latest available versions using Flux.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Overview
+
+The `flux update` command upgrades the specified packages — or all dependencies — to their latest versions. It ensures updates are **safe**, **deterministic**, and **fast**, thanks to Flux's lockfile strategy.
+
+---
+
+## Usage
+
+```bash title="Terminal"
+flux update [package-name...]
+```
+
+---
+
+## Examples
+
+<Tabs items={["Update Specific Packages", "Update All Packages"]}> 
+<Tab>
+
+#### Update Specific Packages
+
+```bash title="Terminal"
+flux update react react-dom
+```
+
+This upgrades `react` and `react-dom` to their latest versions as allowed by the version range in `package.json`.
+
+</Tab>
+
+<Tab>
+
+#### Update All Packages
+
+```bash title="Terminal"
+flux update
+```
+
+This upgrades all dependencies listed in `package.json` to their latest compatible versions.
+
+</Tab>
+</Tabs>
+
+---
+
+## Options
+
+| Option          | Description                                    |
+| --------------- | ---------------------------------------------- |
+| `--latest`      | Force update to latest version, ignoring range |
+| `--dev`         | Only update `devDependencies`                  |
+| `--check`       | Show available updates without applying them   |
+| `--interactive` | Prompt before applying each update             |
+
+---
+
+## How It Works
+
+<Steps>
+    <Step>
+        #### Scans current versions <br />
+        Flux reads your `package.json` and compares it with the latest versions available.
+    </Step>
+    <Step>
+        #### Applies version rules <br />
+        Flux respects semver ranges unless `--latest` is used.
+    </Step>
+    <Step>
+        #### Updates `package.json` and `flux.lock` <br />
+        Ensures both reflect the updated versions and remain in sync.
+    </Step>
+    <Step>
+        #### Installs updated dependencies <br />
+        Flux installs only the changed packages, not the whole tree.
+    </Step>
+</Steps>
+
+---
+
+## Performance
+
+Thanks to its smart diffing and deterministic resolution, `flux update` is significantly faster than `npm update` and `yarn upgrade`.
+
+---
+
+## Related Commands
+
+-   [`flux install`](/docs/cli/install) – Install dependencies
+-   [`flux outdated`](/docs/cli/outdated) – List outdated packages
+-   [`flux reinstall`](/docs/cli/reinstall) – Clean reinstall of all dependencies
+
+---
